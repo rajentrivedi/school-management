@@ -20,17 +20,17 @@ Follow the steps below to set up and run this Laravel application.
       ```bash
       composer install
       ```
-2. **Copy the `.env` file**
+3. **Copy the `.env` file**
    ```bash
    cp .env.example .env
    ```
 
-3. **Generate the Application Key**
+4. **Generate the Application Key**
    ```bash
    php artisan key:generate
    ```
 
-4. **Update Database Credentials**
+5. **Update Database Credentials**
    - Open the `.env` file and update the following database settings:
      ```dotenv
      DB_CONNECTION=mysql
@@ -41,21 +41,27 @@ Follow the steps below to set up and run this Laravel application.
      DB_PASSWORD=your_database_password
      ```
 
-5. **Run Migrations and Seeders**
+6. **Run Migrations and Seeders**
    ```bash
    php artisan migrate --seed
    ```
 
-6. **Start the Development Server**
+7. **Start the Development Server**
    ```bash
    php artisan serve
    ```
 
-7. **Access the Application**
+8. **Access the Application**
    - Admin Panel: http://localhost:8000/admin
    - Admin Credentials: admin@school.com / AdminPassword123!
    - Teacher Panel: http://localhost:8000/teacher
    - Teacher Credentials: teacher@school.com / TeacherPassword123!
+
+9. **Dont foreget to change the mail credentials as well**
+10. **Start queue worker**
+    ```bash
+    php artisan queue:work
+    ```
 
 ---
 
