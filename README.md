@@ -1,4 +1,12 @@
-# Laravel Project Setup
+***School Management Project is developed using Laravel framework and Filament admin panel.***
+
+|  Package | Version |
+| -------- | ------- |
+| Laravel  | 11.34.2 |
+| Filament | 3.2.128 |
+
+
+# School Management Project Setup
 
 Follow the steps below to set up and run this Laravel application.
 
