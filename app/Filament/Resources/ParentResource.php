@@ -30,7 +30,7 @@ class ParentResource extends Resource
             ->schema([
                 Section::make()->schema([
                     TextInput::make('name')->required(),
-                    TextInput::make('email')->required(),
+                    TextInput::make('email')->required()->email(),
                 ])
             ]);
     }

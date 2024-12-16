@@ -19,6 +19,7 @@ use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\TeacherResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\TeacherResource\RelationManagers;
+use Illuminate\Validation\Rules\Password;
 
 class TeacherResource extends Resource
 {
@@ -35,10 +36,11 @@ class TeacherResource extends Resource
                 Section::make()->schema([
                     Group::make()->schema([
                         TextInput::make('name')->required(),
-                        TextInput::make('email')->required(),
+                        TextInput::make('email')->required()->email(),
                         TextInput::make('password')->required(function($operation){
                             return $operation === 'create';
                         })
+                        ->rules([Password::defaults()])
                         ->dehydrated(fn ($state) => filled($state))
                         ->password(),
                     ])

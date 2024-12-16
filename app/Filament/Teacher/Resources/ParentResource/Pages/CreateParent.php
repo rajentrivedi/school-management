@@ -9,4 +9,9 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateParent extends CreateRecord
 {
     protected static string $resource = ParentResource::class;
+
+    public function afterCreate()
+    {
+        $this->record->assignRole('Parent');
+    }
 }

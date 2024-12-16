@@ -9,4 +9,9 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateStudent extends CreateRecord
 {
     protected static string $resource = StudentResource::class;
+
+    public function afterCreate()
+    {
+        $this->record->assignRole('Student');
+    }
 }
